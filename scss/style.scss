@@ -1,0 +1,226 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+@import './colors.scss';
+@import './font.scss';
+
+* {
+    font-family: $standard;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 14px; // Standard
+
+
+    body {
+        min-height: 100vh;
+        width: 100%;
+        background-image: url(../images/bg-desktop.png);
+        background-color: $very-dark-blue;
+        background-repeat: no-repeat;
+        background-position: bottom;
+        background-size: 100vw 50vh;
+
+        main {
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+
+            .files {
+                display: flex;
+                flex-direction: column;
+                padding: 30px;
+                gap: 2rem;
+                border-radius: 0.5rem 7rem 0.5rem 0.5rem;
+                background-color: $dark-blue;
+                width: 300px;
+                height: 180px;
+                // header {}
+
+                .documents {
+                    display: flex;
+                    gap: 1rem;
+                    width: 14rem;
+
+                    a {
+                        background-color: $very-dark-blue;
+                        border-radius: 0.5rem;
+                        display: grid;
+                        place-items: center;
+                        padding: 10px;
+                        
+                        &:hover {
+                            animation: animation-rotate linear 2s;
+                        }
+                    }
+
+                    @keyframes animation-rotate {
+                        0% {
+                            transform: rotate(0deg);
+                        }
+
+                        100% {
+                            transform: rotate(360deg);
+                        }
+                    }
+
+
+                }
+
+                // documents
+            }
+
+            // .files
+
+            .right-content {
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+                background-color: $dark-blue;
+                border-radius: 0.5rem;
+                padding: 30px;
+                height: 130px;
+                margin-top: 50px;
+                width: 500px;
+                position: relative;
+
+                p {
+                    color: $pale-blue;
+                    letter-spacing: 0.5px;
+                    
+                }
+
+                blockquote {
+                    display: flex;
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                    background-color: $pale-blue;
+                    border-radius: 0.7rem 0.7rem 0 0.7rem;
+                    transform: translateY(-50%);
+                    margin-right: 40px;
+
+                    figure {
+                        width: 0;
+                        height: 0;
+                        border-top: 10px solid $pale-blue;
+                        border-bottom: 20px solid transparent;
+                        border-right: 20px solid $pale-blue;
+                        position: absolute;
+                        margin-top: 50px;
+                        margin-left: 123px;
+                    }
+
+                    p {
+                        display: flex;
+                        align-items: center;
+                        gap: 10px;
+                        padding: 10px;
+                        color: $grayish-blue;
+                        font-weight: 700;
+                        
+
+                        strong {
+                            color: $very-dark-blue;
+                            font-size: 2.5rem;
+
+                        }
+                    }
+
+                } // blockquote
+
+                .progress-bar {
+                    width: 100%;
+                    height: 14px;
+                    background-color: $very-dark-blue;
+                    border-radius: 1rem;
+                    margin-top: 10px;
+
+                    .progress {
+                        width: 70%;
+                        height: 100%;
+                        border-radius: 1rem;
+                        background: linear-gradient(to right, $gradient1, $gradient2);
+                        display: flex;
+                        justify-content: flex-end;
+                        align-items: center;
+
+                        .circle {
+                            height: 80%;
+                            width: 14px;
+                            background-color: #fff;
+                            border-radius: 50%;
+                        }
+                    }
+
+                   
+                }
+
+                .values {
+                    display: flex;
+                    justify-content: space-between;
+                    
+
+                    span {
+                        color: $pale-blue;
+                        font-weight: 700;
+                    }
+                }
+            } // .right-content
+
+        }  // main
+
+    }  // body
+
+    @media screen and (max-width: 850px){
+        body {
+            background-image: url(../images/bg-mobile.png);
+            background-position: center;
+            background-size: cover;
+
+            main {
+                flex-direction: column;
+                gap: 0;
+
+                .right-content {
+                    width: 300px;
+                    height: 160px;
+                    margin-top: 20px;
+
+                    p {
+                        font-size: 13px;
+                        text-align: center;
+                    }
+
+                    blockquote {
+                        border-radius: 0.8rem;
+                        position: absolute;
+                        background-color: $pale-blue;
+                        margin-top: 160px;
+                        margin-right: 80px;
+                        
+
+                        figure {
+                            width: 0;
+                            height: 0;
+                            border-top: 10px solid transparent;
+                            border-bottom: 20px solid transparent;
+                            border-right: 20px solid transparent;
+                            position: absolute;
+                           
+                        }
+                        
+                    } // blockquote
+
+                    .values {
+                        margin-top: 10px;
+                    }
+                } // .right-content
+            } // main
+
+        } // body
+    } // @media
+
+}  //*
+
