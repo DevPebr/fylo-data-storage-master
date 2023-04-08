@@ -67,8 +67,8 @@
 }
 
 * body main .files .documents a:hover {
-  -webkit-animation: animation-rotate linear 2s;
-          animation: animation-rotate linear 2s;
+  -webkit-animation: animation-rotate linear 1s;
+          animation: animation-rotate linear 1s;
 }
 
 @-webkit-keyframes animation-rotate {
